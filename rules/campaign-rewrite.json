@@ -1,0 +1,35 @@
+{
+    "name": "Marketing Campaign Rewrite",
+    "children": [],
+    "behaviors": [
+        {
+            "name": "modifyIncomingRequestPath",
+            "options": {
+                "enable": true,
+                "rewriteMode": "replace",
+                "reqPathSearchString": "/promo",
+                "reqPathReplacementString": "/landing-pages/2024-sale.html"
+            }
+        },
+        {
+            "name": "cacheKeyModification",
+            "options": {
+                "enable": true,
+                "baseDirectory": "/landing-pages/2024-sale.html"
+            }
+        }
+    ],
+    "criteria": [
+        {
+            "name": "path",
+            "options": {
+                "matchOperator": "MATCHES_ONE_OF",
+                "values": [
+                    "/promo"
+                ],
+                "matchCaseSensitive": false
+            }
+        }
+    ],
+    "criteriaMustSatisfy": "all"
+}
